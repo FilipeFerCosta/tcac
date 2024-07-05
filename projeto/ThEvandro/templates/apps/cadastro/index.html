@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro</title>
+    </head>
+    <body>
+        <h1>Cadastro aqui</h1>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            {{ registerform.as_p }}
+            <input type="submit" value="Cadastro"/>
+        </form>
+    </body>
+</html>
