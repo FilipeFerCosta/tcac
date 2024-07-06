@@ -1,0 +1,121 @@
+{% load static %}
+
+<div class="box-body box-profile" id="boxProfile">
+    <div class="dashboard-container">
+        <div class="dashboard">
+            <div class="dashboard-card dashboard-card-1">
+                <div class="profile">
+                    <img src="{% static 'IMG/home/profile.jpg' %}" alt="Profile Picture" class="profile-img">
+                    <div class="profile-info">
+                    </div>
+                </div>
+                <h2>Name</h2>
+                <div class="mb-3 row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                            value="email@example.com">
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <button type="button" class="btn btn-outline-secondary">Dados pessoais</button>
+                    <p></p>
+                    <button type="button" class="btn btn-outline-success">Success</button>
+                    <p></p>
+                    <p></p>
+                    <button type="button" class="btn btn-outline-danger">Sair</button>
+                </div>
+            </div>
+            <div class="dashboard-card dashboard-card-2">
+                <h2>Card 2</h2>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+
+                        <!-- Force next columns to break to new line at md breakpoint and up -->
+                        <div class="w-100 d-none d-md-block"></div>
+
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-sm-4">
+                            <div class="dashboard-card">
+                                <h2>Card 3</h2>
+                                <p>This is some sample text for card 3.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard dashboard-card-3">
+                <h2>Card 3</h2>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="dashboard dashboard-card-4">
+                <h2>Card 3</h2>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

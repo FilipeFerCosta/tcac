@@ -1,0 +1,73 @@
+/* Add some basic styling to make the dashboard look decent */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 150px;
+}
+.dashboard-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card-1 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 250px; /* largura aumentada */
+    height: 540px; /* altura aumentada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card-2 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 650px; /* largura aumentada */
+    height: 540px; /* altura aumentada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card-3 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 250px; /* largura aumentada */
+    height: 540px; /* altura aumentada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.dashboard-card-4 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 1240px; /* largura aumentada */
+    height: 540px; /* altura aumentada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+

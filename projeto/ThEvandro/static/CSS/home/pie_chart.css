@@ -1,0 +1,12 @@
+.chart-container {
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+.chart-container canvas {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    max-width: 1000px; /* Largura máxima do gráfico */
+    height: 400px; /* Altura do gráfico */
+    max-height: 600px; /* Altura máxima do gráfico */
+    margin-left: -380px;
+}
+

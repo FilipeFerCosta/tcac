@@ -11,4 +11,3 @@ class HomeView(TemplateView):
     def landing_page_view(request):
         return render(request, 'index.html')
     
-    

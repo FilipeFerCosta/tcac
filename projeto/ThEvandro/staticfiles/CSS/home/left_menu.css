@@ -1,0 +1,107 @@
+.profile {
+    text-align: center; /* Centraliza o conteúdo dentro do elemento .profile */
+}
+
+.username {
+    margin-top: 5px; /* Espaçamento entre a imagem e o nome */
+}
+
+.profile-img {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: 120px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+    margin-right: 10px;
+}
+
+.profile-info {
+    color: #fff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    padding-top: 80px; /* Ajuste conforme necessário para alinhar com o conteúdo abaixo */
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+
+.hamburger {  
+    position: absolute;  
+    top: 16px;  
+    left: 10px;  
+    z-index: 1;  
+  }  
+  
+    
+  .hamburger span {  
+    background-color: #333;  
+    height: 2px;  
+    width: 20px;  
+    display: block;  
+    margin: 4px auto;  
+    transition: 0.3s;  
+  }  
+    
+  .hamburger.active span {  
+    background-color: #fff;  
+  }  
+    
+  .hamburger.active span:nth-child(1) {  
+    transform: translateY(6px) rotate(45deg);  
+  }  
+    
+  .hamburger.active span:nth-child(2) {  
+    opacity: 0;  
+  }  
+    
+  .hamburger.active span:nth-child(3) {  
+    transform: translateY(-6px) rotate(-45deg);  
+  }  
+    
+  .sidebar {  
+    position: fixed;  
+    top: 0;  
+    left: 0;  
+    width: 250px;  
+    height: 100vh;  
+    background-color: #333;  
+    padding: 20px;  
+    transform: translateX(-100%);  
+    transition: 0.3s;  
+  }  
+    
+  .sidebar.active {  
+    transform: translateX(0);  
+  }  
+    
+  .content {  
+    padding-left: 0;  
+    transition: 0.3s;  
+  }  
+    
+  .content.with-sidebar {  
+    padding-left: 250px;  
+  }  
+  
+ 
+.navbar {  
+  padding-left: 40px; /* add some padding to make room for the hamburger icon */  
+  transition: none; /* desativa a transição */  
+  position: relative; /* mantém o navbar estático */  
+}  
+
+ 
+.with-navbar-sidebar {  
+    padding-left: 250px; /* Ajuste este valor conforme necessário */  
+  }  
+  
