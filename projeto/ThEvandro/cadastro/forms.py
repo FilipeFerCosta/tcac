@@ -5,9 +5,21 @@ from django.contrib.auth.hashers import make_password
 class CadastrarUsuario(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'password', 'email']  # Adjust fields as necessary
+        fields = ['username', 'password', 'email']
         widgets = {
-            'password': forms.PasswordInput(),
+            'username': forms.TextInput(attrs={'placeholder': 'Nome do Usuário'}),
+            'password': forms.PasswordInput(attrs={'placeholder': 'Senha'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'E-mail'}),
+        }
+        labels = {
+            'username': '',
+            'password': '',
+            'email': '',
+        }
+        help_texts = {
+            'username': '',  
+            'password': '',  
+            'email': '',     
         }
 
     def save(self, commit=True):

@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cadastro</title>
-    </head>
-    <body>
+<head>
+    <title>Cadastro</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/cadastro/x.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
         <h1>Cadastro aqui</h1>
-        <form method="POST" autocomplete="off">
+        <form method="POST" autocomplete="off" id="registerForm">
             {% csrf_token %}
-            {{ registerform.as_p }}
-            <input type="submit" value="Cadastro"/>
+            <div class="form-group">
+                {{ registerform.username }}
+            </div>
+            <div class="form-group">
+                <div class="password-input">
+                    {{ registerform.password }}
+                    <button type="button" class="show-password-btn" onclick="togglePasswordVisibility()">
+                        Mostrar Senha
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                {{ registerform.email }}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastro" class="submit-btn"/>
+            </div>
         </form>
-    </body>
+    </div>
+    <script src="{% static 'js/cadastro/x.js' %}"></script>
+</body>
 </html>

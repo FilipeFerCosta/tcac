@@ -1,3 +1,5 @@
 criar o arquivo .env na raiz do sistema
 criar o ambiente virtual
 instalar os pacotes do requirements.txt com o comando: pip install -r requirements.txt
+
+python manage.py makemigrations requests
