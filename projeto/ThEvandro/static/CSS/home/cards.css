@@ -3,6 +3,16 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
+.profile-img {
+    width: 180px;  /* Define a largura desejada */
+    height: 180px; /* Define a altura desejada */
+    border-radius: 100%; /* Torna a imagem redonda */
+}
+.profile {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Coloca os itens em coluna */
+}
 .dashboard {
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +68,6 @@ body {
     height: 540px; /* altura aumentada */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .dashboard-card-4 {
     background-color: #fff;
