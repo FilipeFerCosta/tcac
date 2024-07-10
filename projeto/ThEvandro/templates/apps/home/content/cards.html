@@ -37,7 +37,26 @@
                         <button type="button" class="btn btn-outline-success">Success</button>
                         <p></p>
                         <p></p>
-                        <button type="button" class="btn btn-outline-danger">Sair</button>
+                        <button type="button" class="btn btn-outline-danger" onclick="logout()">Sair</button>
+
+                        <script>
+                            function logout() {
+                                fetch('{% url 'login:logout' %}', {
+                                    method: 'POST',
+                                    headers: {
+                                        'X-CSRFToken': '{{ csrf_token }}',
+                                    },
+                                    credentials: 'same-origin', // Ensure credentials include cookies
+                                }).then(response => {
+                                    // Handle response, e.g., redirect or reload page
+                                    window.location.href = '/'; // Example: Redirect to home page
+                                }).catch(error => {
+                                    console.error('Logout error:', error);
+                                    // Handle error, if needed
+                                });
+                            }
+                        </script>
+                        
                     </div>
                 </div>
                 <div class="dashboard-card dashboard-card-2">

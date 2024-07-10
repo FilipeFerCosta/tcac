@@ -1,7 +1,10 @@
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .forms import LoginForm
+from django.contrib.auth.views import LogoutView as DjangoLogoutView
+
 
 class LoginView(TemplateView):
     template_name = "apps/login/index.html"
@@ -24,3 +27,6 @@ class LoginView(TemplateView):
                 form.add_error(None, "Invalid username or password")
         context = {'loginform': form}
         return self.render_to_response(context)
+
+class LogoutView(DjangoLogoutView):
+    next_page = reverse_lazy('login:login')  
