@@ -61,6 +61,11 @@ body {
     margin-bottom: 8px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Adjusts spacing between buttons */
+}
+
 .btn {
     background-color: #0768FB;
     color: #fff;
@@ -71,6 +76,7 @@ body {
     transition: all 160ms;
     padding: 12px 20px;
     border-radius: 4px;
+    text-decoration: none; /* Ensures no underline on anchor tag */
 }
 
 .btn:hover {

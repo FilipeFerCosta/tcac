@@ -11,7 +11,7 @@
 <body>
     <div class="page">
         <form method="POST" class="formLogin">
-            <h1>Login</h1>
+            <h1>Bem vindo ao ThEvandro!</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             {% csrf_token %}
             <div class="form-group">
@@ -22,7 +22,10 @@
                 <label for="id_password">Senha</label>
                 {{ loginform.password }}
             </div>
-            <input type="submit" value="Acessar" class="btn" />
+            <div class="button-container">
+                <input type="submit" value="Acessar" class="btn" />
+                <a href="{% url 'cadastro:cadastro' %}" class="btn">Cadastre-se</a>
+            </div>
         </form>
     </div>
 </body>
