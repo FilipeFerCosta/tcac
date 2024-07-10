@@ -62,26 +62,33 @@
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container text-center">
                                 <div class="row">
+
                                     <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 3</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
+                                        <a href="{% url 'requerimentos:enviar_certificado' %}" class="dashboard-card-link">
+                                            <div class="dashboard-card">
+                                                <h2>Enviar</h2>
+                                                <p>Envie aqui o seu certificado de horas.</p>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 3</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
+                                        <a href="{% url 'requerimentos:listar_certificados' %}" class="dashboard-card-link">
+                                            <div class="dashboard-card">
+                                                <h2>Listar</h2>
+                                                <p>Veja todos seus certificado de horas.</p>
+                                            </div>
+                                        </a>
                                     </div>
 
                                     <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 3</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
+                                        <a href="{% url 'requerimentos:detalhe_certificado' certificado_id=123 %}" class="dashboard-card-link">
+                                            <div class="dashboard-card">
+                                                <h2>Detalhes</h2>
+                                                <p>Veja os detalhes de seus pedidos.</p>
+                                            </div>
+                                        </a>
                                     </div>
-
+                                    
                                     <div class="w-100 d-none d-md-block"></div>
 
                                     <div class="col-6 col-sm-4">
@@ -156,54 +163,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Conteúdo
-                            da aba Contact
-                            <div class="container text-center">
-                                <div class="row">
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="w-100 d-none d-md-block"></div>
-
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-sm-4">
-                                        <div class="dashboard-card">
-                                            <h2>Card 5</h2>
-                                            <p>This is some sample text for card 3.</p>
-                                        </div>
-                                    </div>
-
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="container text-center-1">
+                                <h2>Contact do ThEvandro</h2>
+                                
+                                <div class="contact-info">
+                                    <p><strong>Secretário:</strong> Evandro das Mercês Amorim</p>
+                                    <p><strong>E-mail:</strong> <a href="mailto:secretaria.si@ufvjm.edu.br">secretaria.si@ufvjm.edu.br</a></p>
+                                    <p><strong>Localização:</strong> Prédio Departamento de Computação – Sala 26 Secretaria do curso Sistemas de Informação</p>
+                                    <p><strong>Fone:</strong> <a href="tel:+553835321223">(38) 3532-1223</a></p>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
