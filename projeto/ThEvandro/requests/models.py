@@ -6,7 +6,7 @@ class Certificado(models.Model):
     nome_evento = models.CharField(max_length=255)
     data_evento = models.DateField()
     horas = models.PositiveIntegerField()
-    arquivo_certificado = models.FileField(upload_to='certificados/')
+    arquivo_certificado = models.FileField(upload_to='arquivos_certificados/')
     data_envio = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

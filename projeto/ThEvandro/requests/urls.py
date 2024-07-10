@@ -9,4 +9,6 @@ urlpatterns = [
     path("revisar/", views.RevisarCertificadosView.as_view(), name="revisar_certificados"),
     path("aprovar/<int:certificado_id>/", views.AprovarCertificadoView.as_view(), name="aprovar_certificado"),
     path("rejeitar/<int:certificado_id>/", views.RejeitarCertificadoView.as_view(), name="rejeitar_certificado"),
+    path("listar/", views.ListarCertificadosView.as_view(), name="listar_certificados"),
+    path("detalhe/<int:certificado_id>/", views.DetalheCertificadoView.as_view(), name="detalhe_certificado"),
 ]

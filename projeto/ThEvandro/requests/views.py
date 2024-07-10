@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import View
@@ -7,7 +7,6 @@ from django.views.generic.list import ListView
 from .models import Certificado, RegistroHoraAcademica
 from .forms import FormularioEnvioCertificado
 from django.utils import timezone
-
 
 class PainelView(LoginRequiredMixin, View):
     template_name = 'apps/requests/index.html'
@@ -23,8 +22,6 @@ class PainelView(LoginRequiredMixin, View):
             'form': form,
         }
         return render(request, self.template_name, context)
-
-
 
 class EnviarCertificadoView(LoginRequiredMixin, FormView):
     template_name = 'apps/requests/certificados/enviar_certificado.html'
@@ -50,7 +47,7 @@ class RevisarCertificadosView(LoginRequiredMixin, UserPassesTestMixin, ListView)
 
 class AprovarCertificadoView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):
-        return self.request.user.is_staff
+        return self.request.user.is_superuser
 
     def post(self, request, certificado_id):
         certificado = Certificado.objects.get(id=certificado_id)
@@ -60,11 +57,11 @@ class AprovarCertificadoView(LoginRequiredMixin, UserPassesTestMixin, View):
             revisado_por=request.user,
             data_revisao=timezone.now()
         )
-        return redirect('revisar_certificados')
+        return redirect('requerimentos:revisar_certificados')
 
 class RejeitarCertificadoView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):
-        return self.request.user.is_staff
+        return self.request.user.is_superuser
 
     def post(self, request, certificado_id):
         certificado = Certificado.objects.get(id=certificado_id)
@@ -74,4 +71,35 @@ class RejeitarCertificadoView(LoginRequiredMixin, UserPassesTestMixin, View):
             revisado_por=request.user,
             data_revisao=timezone.now()
         )
-        return redirect('revisar_certificados')
+        return redirect('requerimentos:revisar_certificados')
+
+class ListarCertificadosView(LoginRequiredMixin, ListView):
+    template_name = 'apps/requests/certificados/listar_certificados.html'
+    context_object_name = 'certificados'
+
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Certificado.objects.all()
+        return Certificado.objects.filter(estudante=self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_superuser:
+            context['aprovados'] = Certificado.objects.filter(registro_hora_academica__aprovado=True)
+            context['rejeitados'] = Certificado.objects.filter(registro_hora_academica__aprovado=False)
+            context['pendentes'] = Certificado.objects.filter(registro_hora_academica__isnull=True)
+        else:
+            context['aprovados'] = Certificado.objects.filter(estudante=self.request.user, registro_hora_academica__aprovado=True)
+            context['rejeitados'] = Certificado.objects.filter(estudante=self.request.user, registro_hora_academica__aprovado=False)
+            context['pendentes'] = Certificado.objects.filter(estudante=self.request.user, registro_hora_academica__isnull=True)
+        return context
+
+class DetalheCertificadoView(LoginRequiredMixin, View):
+    template_name = 'apps/requests/certificados/detalhe_certificado.html'
+
+    def get(self, request, certificado_id):
+        certificado = get_object_or_404(Certificado, id=certificado_id)
+        context = {
+            'certificado': certificado,
+        }
+        return render(request, self.template_name, context)

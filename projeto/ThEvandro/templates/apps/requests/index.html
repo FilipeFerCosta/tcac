@@ -1,50 +1,19 @@
 {% extends "base/base.html" %}
-
 {% block content %}
-<h2>Painel</h2>
-
-<div>
-    <h3>Enviar Certificado</h3>
-    <form method="post" enctype="multipart/form-data" action="{% url 'requerimentos:enviar_certificado' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-
-{% if user.is_staff %}
-    <div>
-        <h3>Revisar Certificados</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome do Evento</th>
-                    <th>Data do Evento</th>
-                    <th>Horas</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for certificado in certificados %}
-                <tr>
-                    <td>{{ certificado.nome_evento }}</td>
-                    <td>{{ certificado.data_evento }}</td>
-                    <td>{{ certificado.horas }}</td>
-                    <td>
-                        <form method="post" action="{% url 'requerimentos:aprovar_certificado' certificado.id %}">
-                            {% csrf_token %}
-                            <button type="submit">Aprovar</button>
-                        </form>
-                        <form method="post" action="{% url 'requerimentos:rejeitar_certificado' certificado.id %}">
-                            {% csrf_token %}
-                            <button type="submit">Rejeitar</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+<h2>Certificados</h2>
+{% if certificados %}
+    <ul>
+        {% for certificado in certificados %}
+        <li>{{ certificado.nome_evento }} - {{ certificado.data_envio }} - {{ certificado.estudante.username }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum certificado enviado ainda.</p>
 {% endif %}
-
+<h3>Enviar Novo Certificado</h3>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
 {% endblock %}

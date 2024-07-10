@@ -1,0 +1,22 @@
+{% block content %}
+<h2>Detalhes do Certificado</h2>
+<p><strong>Nome do Evento:</strong> {{ certificado.nome_evento }}</p>
+<p><strong>Data do Evento:</strong> {{ certificado.data_evento }}</p>
+<p><strong>Horas:</strong> {{ certificado.horas }}</p>
+<p><strong>Arquivo do Certificado:</strong> <a href="{{ certificado.arquivo_certificado.url }}" target="_blank">Download Certificado</a></p>
+<p><strong>Data de Envio:</strong> {{ certificado.data_envio }}</p>
+
+{% if certificado.registro_hora_academica %}
+    <h3>Detalhes do Registro</h3>
+    <p><strong>Aprovado:</strong> {% if certificado.registro_hora_academica.aprovado %}Sim{% else %}Não{% endif %}</p>
+    {% if certificado.registro_hora_academica.revisado_por %}
+        <p><strong>Revisado por:</strong> {{ certificado.registro_hora_academica.revisado_por.get_full_name }}</p>
+        <p><strong>Data de Revisão:</strong> {{ certificado.registro_hora_academica.data_revisao }}</p>
+    {% else %}
+        <p><strong>Estado:</strong> Pendente de Revisão</p>
+    {% endif %}
+{% else %}
+    <p><strong>Estado:</strong> Sem Registro de Horas Acadêmicas</p>
+{% endif %}
+<p><strong>Criado por:</strong> {{ certificado.estudante.get_full_name }}</p>
+{% endblock %}

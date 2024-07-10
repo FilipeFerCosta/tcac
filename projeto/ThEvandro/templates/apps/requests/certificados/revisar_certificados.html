@@ -1,0 +1,23 @@
+
+{% block content %}
+<h1>Revisar Certificados</h1>
+{% if certificados %}
+    <ul>
+    {% for certificado in certificados %}
+        <li>
+            <strong>{{ certificado.nome_evento }}</strong> - {{ certificado.estudante.username }} - {{ certificado.data_evento }}
+            <form method="post" action="{% url 'requerimentos:aprovar_certificado' certificado.id %}">
+                {% csrf_token %}
+                <button type="submit">Aprovar</button>
+            </form>
+            <form method="post" action="{% url 'requerimentos:rejeitar_certificado' certificado.id %}">
+                {% csrf_token %}
+                <button type="submit">Rejeitar</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum certificado para revisar.</p>
+{% endif %}
+{% endblock %}

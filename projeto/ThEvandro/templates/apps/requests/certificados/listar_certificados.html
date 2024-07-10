@@ -1,0 +1,31 @@
+{% block content %}
+<h2>Certificados Pendentes</h2>
+{% for certificado in pendentes %}
+    <div>
+        <p><a href="{% url 'requerimentos:detalhe_certificado' certificado.id %}">{{ certificado.nome_evento }}</a></p>
+        <p>{{ certificado.data_envio }}</p>
+    </div>
+{% empty %}
+    <p>Nenhum certificado pendente.</p>
+{% endfor %}
+
+<h2>Certificados Aprovados</h2>
+{% for certificado in aprovados %}
+    <div>
+        <p><a href="{% url 'requerimentos:detalhe_certificado' certificado.id %}">{{ certificado.nome_evento }}</a></p>
+        <p>{{ certificado.data_envio }}</p>
+    </div>
+{% empty %}
+    <p>Nenhum certificado aprovado.</p>
+{% endfor %}
+
+<h2>Certificados Rejeitados</h2>
+{% for certificado in rejeitados %}
+    <div>
+        <p><a href="{% url 'requerimentos:detalhe_certificado' certificado.id %}">{{ certificado.nome_evento }}</a></p>
+        <p>{{ certificado.data_envio }}</p>
+    </div>
+{% empty %}
+    <p>Nenhum certificado rejeitado.</p>
+{% endfor %}
+{% endblock %}
