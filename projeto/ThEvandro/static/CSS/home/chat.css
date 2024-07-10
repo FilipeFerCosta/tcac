@@ -13,7 +13,7 @@ body {
     padding-bottom: 20px;
 }
 
-/* ChatBot - Jarvis */
+/* layout and common global classes */
 /* ---------------------------------------------------------------------- */
 
 .chat_window {
@@ -24,8 +24,8 @@ body {
 }
 
 .chat_window_small {
-    width: 500px;  /* Define a largura desejada */
-    height: 540px; /* Define a altura desejada */
+    width: 300px;  /* Define a largura desejada */
+    height: 340px; /* Define a altura desejada */
 }
 
 .top_menu {
@@ -39,6 +39,9 @@ body {
     color: #337ab7;
     font-size: 20px;
 }
+
+/* messages inside the chatbox */
+/* ---------------------------------------------------------------------- */
 
 .messages {
     position: relative;
@@ -109,6 +112,8 @@ body {
     margin-top: -2px;
 }
 
+/* bot message */
+
 .messages .message.left .avatar {
     float: left;
     background: url('./img/bot.jpg');
@@ -128,6 +133,8 @@ body {
 .messages .message.left .timestamp {
     color: #b0742f;
 }
+
+/* user message */
 
 .messages .message.right .avatar {
     float: right;
@@ -149,6 +156,8 @@ body {
 .messages .message.right .timestamp {
     color: #1a5770;
 }
+
+/* text input from user */
 
 .bottom_wrapper {
     background-color: #fff;
@@ -172,29 +181,14 @@ body {
     border-radius: 50px;
     cursor: pointer;
     padding: 12px;
+
     color: #fff;
     font-size: 18px;
     font-weight: 300;
     text-align: center;
 }
 
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #edeff2;
-    font-family: 'Calibri', 'Roboto', sans-serif;
-}
-
-.row.padded_row,
-.row.padded_row > div {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-/* Help */
+/* faq section | right side */
 /* ---------------------------------------------------------------------- */
 
 .panel-group {
@@ -208,6 +202,7 @@ body {
     font-size: 18px;
     line-height: 22px;
     transition: all 0.2s linear;
+
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
@@ -221,4 +216,56 @@ body {
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
+}
+/* Estilos personalizados para ajustes específicos */
+
+/* Largura e altura dos chat windows */
+.chat_window_small {
+    width: 100%; /* Ajuste conforme necessário */
+    height: 540px; /* Ajuste conforme necessário */
+}
+
+/* Ajuste de margens e espaçamentos */
+.row.padded_row,
+.row.padded_row > div {
+    padding-top: 1px;
+    padding-bottom: 20px;
+}
+
+/* Outros estilos conforme necessário */
+/* Estilo para a seção de Ajuda */
+.chat_window_small .panel-group {
+    margin-top: 10px; /* Espaço acima do painel de ajuda */
+}
+
+.chat_window_small .panel {
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.chat_window_small .panel-heading {
+    background-color: #337ab7; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+}
+
+.chat_window_small .panel-title a {
+    color: #fff; /* Cor do texto do link no título */
+    text-decoration: none; /* Remover sublinhado do link */
+    display: block;
+    padding: 10px;
+}
+
+.chat_window_small .panel-title a:hover {
+    text-decoration: underline; /* Sublinhar o link ao passar o mouse */
+}
+
+.chat_window_small .panel-body {
+    padding: 10px;
+    background-color: #fff; /* Cor de fundo do corpo do painel */
+    border: 1px solid #ddd; /* Borda do corpo do painel */
+    border-top: none; /* Remover borda superior */
+    border-radius: 0 0 8px 8px;
 }

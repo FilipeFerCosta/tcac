@@ -105,3 +105,7 @@
     padding-left: 250px; /* Ajuste este valor conforme necessário */  
   }  
   
+  .profile-img2 {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: 30px; /* Ajuste o tamanho conforme necessário */
+}
